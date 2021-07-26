@@ -1,8 +1,7 @@
-import pickle
 import random
-from pprint import pprint
+import yaml
 
-import tools
+from tttmenace import tools
 
 
 class AutoPlayer:
@@ -44,10 +43,9 @@ class AutoPlayer:
             self.chances[field][move] += c
 
     def save_chances(self, filename: str):
-        with open(filename, 'wb') as fp:
-            pickle.dump(self.chances, fp)
-        pprint(self.chances)
+        with open(filename, 'w', encoding='utf-8') as fp:
+            yaml.dump(self.chances, fp)
 
     def load_chances(self, filename: str):
-        with open(filename, 'rb') as fp:
-            self.chances = pickle.load(fp)
+        with open(filename, 'r', encoding='utf-8') as fp:
+            self.chances = yaml.load(fp)

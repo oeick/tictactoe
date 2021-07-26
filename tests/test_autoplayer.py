@@ -1,6 +1,6 @@
 import unittest
 
-import autoplayer
+from tttmenace import autoplayer
 
 
 class AutoPlayerTest(unittest.TestCase):

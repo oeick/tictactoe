@@ -1,6 +1,6 @@
 import unittest
 
-import tools
+from tttmenace import tools
 
 
 class ToolsTests(unittest.TestCase):
