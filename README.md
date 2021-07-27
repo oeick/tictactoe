@@ -12,7 +12,13 @@ algorithm.
 
 ## Start
 
+Human vs AutoPlayer:
+
     python cli.py
+
+AutoPlayer vs itself:
+
+    python auto.py <number_of_rounds_to_play>
 
 Key map for human player:
 
@@ -21,6 +27,15 @@ Key map for human player:
      a | s | d
     ---+---+---
      z | x | c
+
+Quit playing without saving:
+
+    ctrl-c
+
+
+Quit playing with saving:
+
+    !
 
 
 ## Tests

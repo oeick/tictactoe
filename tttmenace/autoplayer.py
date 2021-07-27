@@ -1,3 +1,4 @@
+import os
 import random
 import yaml
 
@@ -47,5 +48,8 @@ class AutoPlayer:
             yaml.dump(self.chances, fp)
 
     def load_chances(self, filename: str):
-        with open(filename, 'r', encoding='utf-8') as fp:
-            self.chances = yaml.load(fp)
+        if os.path.isfile(filename):
+            with open(filename, 'r', encoding='utf-8') as fp:
+                self.chances = yaml.safe_load(fp)
+        else:
+            self.chances = {}

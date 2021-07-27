@@ -10,12 +10,17 @@ def make_random_move(field: str) -> int:
 
 
 def read_move(field: str) -> int:
+    """
+    Returns id of move, or -1 if player wants quit playing.
+    """
     key_map = {'q': 0, 'w': 1, 'e': 2,
                'a': 3, 's': 4, 'd': 5,
                'z': 6, 'x': 7, 'c': 8}
     move = -1
     while move == -1:
         key = input('your move: ')
+        if key == '!':
+            return -1
         move = key_map.get(key, -1)
         if field[move] != '.':
             print('illegal move')
